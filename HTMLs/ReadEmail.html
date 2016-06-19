@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IE Project 4</title>
+    <link rel="stylesheet" type="text/css" href="../Stylesheets/ReadEmail.css">
+</head>
+<body>
+<div id="email">
+    
+    <button type="button" id="deleteMail">Delete this Email</button>
+
+</div>
+
+</body>
+</html>
+    <script src="./jquery-1.12.0.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+        $.urlParam = function(name){
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+            return results[1] || 0;
+        }
+        var from=$.urlParam('from');
+        var date=$.urlParam('date');
+
+            $.ajax({
+                type:"GET",
+                url : "../server.php?email=true&from="+from+"&date="+date,
+                dataType : "xml",
+                cache : false ,
+                async : false ,
+                success : function (xml) {
+                    var mail=$(xml).children("mail");
+                    var email='<p>An email from:</p><p id="from">'+mail.children("from").text();
+                        email+='</p><br><p>with subject of:</p><p id="subject">'+mail.children("subject").text();
+                        email+='</p><br><p>received in date:</p><p id="date">'+mail.children("date").text();
+                        email+='</p><br><div id="test"><p id="text">'+mail.children("text").text()+'</p></div>';
+                        $("#email").append(email);
+                    $(document).on('click','#deleteMail',function(){
+                        $.ajax({
+                            method: 'get',
+                            url: '../server.php?from='+from+'&date='+date,
+                            success: function(data){
+                                 alert("successfuly deleted.");
+                            },error: function(jqXHR, textStatus, errorThrown)
+                            {
+                             // Handle errors here
+                             console.log('ERRORS: ' + textStatus);
+                             console.log(jqXHR.responseText);
+                             // STOP LOADING SPINNER
+                             }
+                            });
+
+                    });
+                },error: function(jqXHR, textStatus, errorThrown)
+                         {
+                         // Handle errors here
+                         console.log('ERRORS: ' + textStatus);
+                         console.log(jqXHR.responseText);
+                         // STOP LOADING SPINNER
+                         }
+            });
+
+    });
+
+    </script>
+

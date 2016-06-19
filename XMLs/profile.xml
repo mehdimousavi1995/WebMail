@@ -1,0 +1,26 @@
+<data>
+	<first></first>
+	<last></last>
+	<username></username>
+	<img></img>
+	<contacts>
+		<contact>
+			<img></img>
+			<first></first>
+			<last></last>
+			<username></username>
+		</contact>
+		<contact>
+			<img></img>
+			<first></first>
+			<last></last>
+			<username></username>
+		</contact>
+		<contact>
+			<img></img>
+			<first></first>
+			<last></last>
+			<username></username>
+		</contact>
+	</contacts>
+</data>

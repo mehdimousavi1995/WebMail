@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IE Project 4</title>
+    <link rel="stylesheet" type="text/css" href="../Stylesheets/Profile.css">
+    <link rel="stylesheet" type="text/css" href="../Stylesheets/LoginRegister.css">
+    <link rel="stylesheet" type="text/css" href="../Stylesheets/Users.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<div id="data">
+    <!--<img src=""><br>
+    <span>First Name: </span>
+    <sapn >farid</span><br>
+    <span>Last Name: </span>
+    <span>laya</span><br>
+    <span>Email: </span>
+    <span>e@gmail.com</span>!-->
+</div>
+<form id="registeration" style="margin-left: auto;margin-right: auto;">
+    <div style="width: 70%;height: 300px;margin-left: auto;margin-right: auto;">
+        <div class="titles">
+            <h5>First Name :</h5>
+            <h5>Last Name :</h5>
+            <h5>Email :</h5>
+            <h5>Password :</h5>
+            <h5>Image :</h5>
+        </div>
+        <div class="inputs">
+            <input type="text" name="firstname">
+            <input type="text" name="lastname">
+            <input type="email" name="email">
+            <input type="password" name="pass">
+            <input type="file" name="image">
+        </div>
+        <input type="submit" value="Save Changes" style="background-color: #97d9ff">
+    </div>
+</form>
+<div id="contacts">
+    <!--<div class="person">
+        <img src=""><br>
+        <span>First Name: </span>
+        <span >hasan</span><br>
+        <span>Last Name: </span>
+        <span>hasani</span><br>
+        <span>Email: </span>
+        <span>hasan@e.ir</span><br>
+        </div>
+    <div class="person">
+        <img src=""><br>
+        <span>First Name: </span>
+        <span >hasan</span><br>
+        <span>Last Name: </span>
+        <span>hasani</span><br>
+        <span>Email: </span>
+        <span>hasan@e.ir</span><br>
+    </div>!-->
+</div>
+</body>
+</html>
+    <script src="./jquery-1.12.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $.ajax({
+                type:"GET",
+                url : "../server.php?profile=true",
+                dataType : "xml",
+                cache : false ,
+                async : false ,
+                success : function (xml) {
+                    var data=$(xml).children('data');
+                    var contacts=data.children('contacts');
+
+                    var it='<img src="'+data.children('img').text()+'"><br><span>First Name: </span><sapn >'+data.children('first').text()+'</span><br><span>Last Name: </span><span>'+data.children('last').text()+'</span><br><span>Email: </span><span>'+data.children('username').text()+'</span>';
+                    contacts.children('contact').each(function(){
+                        var person='<div class="person"><img src="'+$(this).children('img').text()+'"><br><span>First Name: </span><span >'+$(this).children('first').text()+'</span><br><span>Last Name: </span><span>'+$(this).children('last').text()+'</span><br><span>Email: </span><span>'+$(this).children('username').text()+'</span><br></div>';
+                        $("#contacts").append(it);
+                    });
+                },error: function(jqXHR, textStatus, errorThrown)
+                         {
+                         // Handle errors here
+                         console.log('ERRORS: ' + textStatus);
+                         console.log(jqXHR.responseText);
+                         // STOP LOADING SPINNER
+                         }
+            });
+
+    
+    </script>

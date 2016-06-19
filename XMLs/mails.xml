@@ -1,0 +1,32 @@
+<mails>
+	<mail read="true">
+		<from></from>
+		<to></to>
+		<date></date>
+		<text>
+		</text>
+		<attachments>
+			<attach></attach>
+		</attachments>
+	</mail>
+	<mail spam="true">
+		<from></from>
+		<to></to>
+		<date></date>
+		<text>
+		</text>
+		<attachments>
+			<attach></attach>
+		</attachments>
+	</mail>
+	<mail>
+		<from></from>
+		<to></to>
+		<date></date>
+		<text>
+		</text>
+		<attachments>
+			<attach></attach>
+		</attachments>
+	</mail>
+</mails>
