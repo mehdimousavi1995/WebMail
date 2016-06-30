@@ -12,13 +12,23 @@ body {
 }
 .forms {
     width: 400px;
-    height: 250px;
+    height: 320px;
     float: left;
     display: inline-block;
     border: 1px gray solid;
     margin-top: 50px;
     padding-top: 50px;
     background-color: #97d9ff;
+}
+#captcha{
+    height: 30px;
+    width: 100px;
+    margin-top: 10px;
+    position: relative;
+    bottom: 5px;
+    left: 2px;
+    top: 2px;
+    margin-bottom: 20px;
 }
 .forms h5 {
     width: 100px;

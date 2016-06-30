@@ -1,0 +1,25 @@
+<?php
+include ('../includes/db_connection.php');
+if(isset($_GET['add']))
+{
+    $username = $_GET['add'];
+
+    if(isset($_COOKIE['id']))
+    {
+        $me=$_COOKIE['id'];
+
+        //check if user not exist in my account 
+
+        $query_insert = "INSERT INTO myContact";
+        $query_insert .= "(";
+        $query_insert .= "_user,user_contact,is_accepted";
+        $query_insert .= ") VALUES (";
+        $query_insert .= "'{$me}','{$username}',0 ";
+        $query_insert .= ")";
+
+        $result = mysqli_query($connection, $query_insert);
+    }
+
+}
+
+include ('../includes/db_connection_close.php');
