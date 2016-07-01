@@ -42,9 +42,10 @@
     <h5 id="inbox">Inbox</h5>
     <h5 id="sent">Sent</h5>
     Num of Mail:<input type="text" name="numOfMail" id="numOfMail" value="5"><br>
-    <input type="radio" name="sortby" id="date" checked="checked" value="date">Sort By Date<br>
     <input type="radio" name="sortby" id="sender" checked="checked" value="sender">Sort By sender<br>
-    <input type="radio" name="sortby" id="attach" checked="checked" value="attach">Sort By attachment<br>
+    <input type="radio" name="sortby" id="attach" checked="checked" value="attachment">Sort By attachment<br>
+    <input type="radio" name="sortby" id="date" checked="checked" value="sending_time">Sort By Date<br>
+
 
 </div>
 <div id="mails">
@@ -215,12 +216,10 @@
         });
         $('input[type=radio][name=sortby]').change(function () {
             numOfMail = $("#numOfMail").val();
-            alert(numOfMail);
-
             $("#mails").empty();
             $.ajax({
                 type: "GET",
-                url: "../PHPs/mail.php?refresh=true&nom=" + numOfMail,
+                url: "../PHPs/Inbox.php?inbox=true&sortby=" + this.value + "&nom=" + numOfMail,
                 dataType: "xml",
                 cache: false,
                 async: false,

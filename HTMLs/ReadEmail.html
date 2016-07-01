@@ -6,24 +6,19 @@
 </head>
 <body>
 <div id="email">
-
     <button type="button" id="deleteMail">Delete this Email</button>
-
 </div>
-
 </body>
 </html>
 <script src="./jquery-1.12.0.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-
         $.urlParam = function (name) {
             var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
             return results[1] || 0;
         }
         var from = $.urlParam('from');
         var date = $.urlParam('date');
-
         $.ajax({
             type: "GET",
             url: "../server.php?email=true&from=" + from + "&date=" + date,
@@ -32,12 +27,11 @@
             async: false,
             success: function (xml) {
                 var mail = $(xml).children("mail");
-                var email = '<p>An email from:</p><p id="from">' + mail.children("from").text();
-                email += '</p><br><p>with subject of:</p><p id="subject">' + mail.children("subject").text();
-                email += '</p><br><p>received in date:</p><p id="date">' + mail.children("date").text();
-                email += '</p><br><div id="test"><p id="text">' + mail.children("text").text() + '</p></div>';
+                var email = '<p>An email from:</p><p id="from">' + 'mehdi.mousavi1995@gmail.com';
+                email += '</p><br><p>with subject of:</p><p id="subject">' +'funny';
+                email += '</p><br><p>received in date:</p><p id="date">' + '2016-07-01 06:46:00';
+                email += '</p><br><div id="test"><p id="text">' + 'salam khan amoo';
                 $("#email").append(email);
-
                 $(document).on('click', '#deleteMail', function () {
                     $.ajax({
                         method: 'get',
@@ -48,10 +42,8 @@
                             // Handle errors here
                             console.log('ERRORS: ' + textStatus);
                             console.log(jqXHR.responseText);
-                            // STOP LOADING SPINNER
                         }
                     });
-
                 });
             }, error: function (jqXHR, textStatus, errorThrown) {
                 // Handle errors here
@@ -60,8 +52,6 @@
                 // STOP LOADING SPINNER
             }
         });
-
     });
-
 </script>
 

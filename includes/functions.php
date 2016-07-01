@@ -56,10 +56,10 @@ function Update_query_email()
 {
 }
 
-function Select_query_email($email, $senderOrReceiver)
+function Select_query_email($email, $senderOrReceiver, $sortby)
 {
     $query_select = "SELECT * FROM Email ";
-    $query_select .= "WHERE $senderOrReceiver = '{$email}'";
+    $query_select .= "WHERE $senderOrReceiver = '{$email}' order by {$sortby} ";
     return $query_select;
 }
 
@@ -167,6 +167,7 @@ function xml_builder_data($connection, $email)
     $xml_output .= '<first>' . $row['FirstName'] . '</first>';
     $xml_output .= '<last>' . $row['LastName'] . '</last>';
     $xml_output .= '<username>' . $row['Email'] . '</username>';
+    $xml_output .= '<date>' . $row['Last_time_loged_in'] . '</date>';
     $xml_output .= '<contacts>';
 
     $query_select = "SELECT user_contact FROM myContact JOIN users ";

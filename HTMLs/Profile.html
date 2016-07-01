@@ -38,7 +38,7 @@
 <script src="./jquery-1.12.0.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-        var last_seen='1394';
+
 
         $.ajax({
             type: "GET",
@@ -49,11 +49,10 @@
             success: function (xml) {
                 var data = $(xml).children('data');
                 var contacts = data.children('contacts');
-                var it = '<img src="'+'../PHPs/' + data.children('img').text() + '"><br><span>First Name: </span><sapn >' + data.children('first').text() + '</span><br><span>Last Name: </span><span>' + data.children('last').text() + '</span><br><span>Email: </span><span>' + data.children('username').text() + '</span><br><span>Last Seen: </span><span>1394</span><br>';
+                var it = '<img src="'+'../PHPs/' + data.children('img').text() + '"><br><span>First Name: </span><sapn >' + data.children('first').text() + '</span><br><span>Last Name: </span><span>' + data.children('last').text() + '</span><br><span>Email: </span><span>' + data.children('username').text() + '</span><br><span>Last Seen: </span><span>'+data.children('date').text()+'</span><br>';
                 $('#data').append(it);
                 contacts.children('contact').each(function () {
-                    var person = '<div class="person"><img src="' +'../PHPs/'+ $(this).children('img').text() + '"><br><span>First Name: </span><span >' + $(this).children('first').text() + '</span><br><span>Last Name: </span><span>' + $(this).children('last').text() + '</span><br><span>Email: </span><span>' + $(this).children('username').text() + '</span></div>';
-
+                    var person = '<div class="person"><img src="' +'../PHPs/'+ $(this).children('img').text() + '"><br><span>First Name: </span><span >' + $(this).children('first').text() + '</span><br><span>Last Name: </span><span>' + $(this).children('last').text() + '</span><br><span>Email: </span><span>' + $(this).children('username').text() + '</span><br></div>';
                     $("#contacts").append(person);
                 });
             }, error: function (jqXHR, textStatus, errorThrown) {

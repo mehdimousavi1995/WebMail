@@ -34,7 +34,7 @@ if (isset($_POST['Register']) && isset($_POST['firstname']) &&
         echo 'Email is already exist ';
         echo '<a href="../HTMLs/LoginRegister.html">LoginRegister</a>';
     } else {
-        $DateTime = date("Y-m-d h:i");
+        $DateTime = date("h:i Y-m-d");
         $image_link = upload_image($email);
         $query_insert = Insert_query_users($first_name, $last_name, $email, $password, $image_link, $background_link, $DateTime);
         $result = perform_query($connection, $query_insert);
@@ -56,7 +56,7 @@ if (isset($_POST['Login'])) {
                 $expiration = time() + (60 * 60 * 24 * 7 * 4); // 60*60*24*7*4 second == 1 month
                 set_cookie_remember_me($expiration, $first_name, $last_name, $email);
             }
-            $DateTime = date("Y-m-d h:i");
+            $DateTime = date("h:i Y-m-d");
             header("LOCATION: ../HTMLs/inbox.html");
             $query_update = Update_query_users($DateTime, $email);
             $result_update = perform_query($connection, $query_update);
