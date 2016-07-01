@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>IE Project 4</title>
+    <link rel="stylesheet" type="text/css" href="../Stylesheets/Profile.css">
+    <link rel="stylesheet" type="text/css" href="../Stylesheets/Users.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+<h1>Notifications</h1>
+</body>
+</html>
+<script src="./jquery-1.12.0.js"></script>
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+
+        $.ajax({
+            type: "GET",
+            url: "../PHPs/BackgroundImage.php?back=true",
+            dataType: "text",
+            data: {},
+            cache: false,
+            async: false,
+            success: function (msg) {
+//                alert(msg);
+                $('body').css({'background-image': 'url(' + '../PHPs/' + msg + ')'});
+            }, error: function (jqXHR, textStatus, errorThrown) {
+                // Handle errors here
+                console.log('ERRORS: ' + textStatus);
+                console.log(jqXHR.responseText);
+                // STOP LOADING SPINNER
+            }
+        });
+        $.ajax({
+            type: "GET",
+            url: "../PHPs/Notification.php?Notification=true",
+            dataType: "xml",
+            cache: false,
+            async: false,
+            success: function (xml) {
+                var data = $(xml).children('users');
+
+                data.children('user').each(function () {
+                    var person = '<div class="person"><img src="' +'../PHPs/'+ $(this).children('img').text() + '"><br><span>First Name: </span><span >' + $(this).children('first').text() + '</span><br><span>Last Name: </span><span>' + $(this).children('last').text() + '</span><br><span>Email: </span><span id="username" class="email">' + $(this).children('username').text() + '</span><br><button type="button" class="add">Confirm</button><br><button type="button" class="reject">Reject</button><br><button type="button" class="block">block</button></div>';
+                    $('body').append(person);
+                });
+                $('.add').on('click', function () {
+                    var x = $(this);
+                    var username = $(x.parent().find('#username')).text();
+
+                    $.ajax({
+                        method: 'get',
+                        url: '../PHPs/Notification.php?add=' + username,
+                        success: function (data) {
+                            alert("You and "+username +'are now friends ... :)');
+                            x.css('background-color', 'green');
+                        }, error: function (jqXHR, textStatus, errorThrown) {
+                            // Handle errors here
+                            console.log('ERRORS: ' + textStatus);
+                            console.log(jqXHR.responseText);
+                            // STOP LOADING SPINNER
+                        }
+                    });
+                })
+
+                $('.reject').on('click', function () {
+                    var x = $(this);
+                    var username = $(x.parent().find('#username')).text();
+                    $.ajax({
+                        method: 'get',
+                        url: '../PHPs/Notification.php?reject=' + username,
+                        success: function (data) {
+                            alert("successfuly added to your contacts.");
+                            x.css('background-color', 'yellow');
+                        }, error: function (jqXHR, textStatus, errorThrown) {
+                            // Handle errors here
+                            console.log('ERRORS: ' + textStatus);
+                            console.log(jqXHR.responseText);
+                            // STOP LOADING SPINNER
+                        }
+                    });
+                })
+
+                $('.block').on('click', function () {
+                    var x = $(this);
+                    var username = $(x.parent().find('#username')).text();
+                    $.ajax({
+                        method: 'get',
+                        url: '../PHPs/Notification.php?block=' + username,
+                        success: function (data) {
+                            alert("successfuly added to your contacts.");
+                            x.css('background-color', 'red');
+                        }, error: function (jqXHR, textStatus, errorThrown) {
+                            // Handle errors here
+                            console.log('ERRORS: ' + textStatus);
+                            console.log(jqXHR.responseText);
+                            // STOP LOADING SPINNER
+                        }
+                    });
+                })
+
+            }, error: function (jqXHR, textStatus, errorThrown) {
+                // Handle errors here
+                console.log('ERRORS: ' + textStatus);
+                console.log(jqXHR.responseText);
+                // STOP LOADING SPINNER
+            }
+        });
+    });
+
+
+</script>

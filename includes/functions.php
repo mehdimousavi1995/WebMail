@@ -87,12 +87,19 @@ function Insert_query_myContact($email, $username)
 
 }
 
-function Delete_query_myContact()
+function Delete_query_myContact($username,$email)
 {
+    $query_delete = "DELETE FROM myContact ";
+    $query_delete .= "WHERE _user = '{$email}' and user_contact = '{$username}'";
+    return $query_delete;
 }
 
-function Update_query_myContact()
+function Update_query_myContact($username,$email)
 {
+    $query_update = "UPDATE myContact SET ";
+    $query_update .= "is_accepted = 1 ";
+    $query_update .= "WHERE _user = '{$email}' and user_contact = '{$username}' ";
+    return $query_update;
 }
 
 function Select_query_myContact($email)
@@ -240,6 +247,28 @@ function xml_builder_users($result, $email)
             $xml_output .= '<first>' . $row['FirstName'] . '</first>';
             $xml_output .= '<last>' . $row['LastName'] . '</last>';
             $xml_output .= '<username>' . $row['Email'] . '</username></user>';
+        }
+    }
+    $xml_output .= '</users>';
+    return $xml_output;
+
+}
+
+function xml_builder_Notification($result, $connection)
+{
+    $xml_output = '<users>';
+    while ($row = mysqli_fetch_assoc($result)) {
+        $current = $row['user_contact'];
+        
+        $user_query_select = Select_query_users($current);
+        $res = perform_query($connection, $user_query_select);
+        
+        while ($r = mysqli_fetch_assoc($res)) {
+            $xml_output .= '<user>';
+            $xml_output .= '<img>' . $r['Image_Link'] . '</img>';
+            $xml_output .= '<first>' . $r['FirstName'] . '</first>';
+            $xml_output .= '<last>' . $r['LastName'] . '</last>';
+            $xml_output .= '<username>' . $r['Email'] . '</username></user>';
         }
     }
     $xml_output .= '</users>';
