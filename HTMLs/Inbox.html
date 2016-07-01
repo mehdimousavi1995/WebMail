@@ -29,9 +29,9 @@
 
         <a href="Profile.html">Profile</a>
         <a href="../PHPs/Logout.php">Logout</a>
-        <span id="first_name">mehdi</span>
-        <span id="last_name">mousavi</span>
-        <img src="../Images/hesam.jpg"/>
+        <span id="first_name"></span>
+        <span id="last_name"></span>
+        <img id="image_link" src="../Images/defult.png"/>
     </div>
 
 </div>
@@ -251,6 +251,33 @@
             });
         });
     });
+
+    $.ajax({
+        type: "GET",
+        url: "../PHPs/YourProfile.php",
+        dataType: "xml",
+        cache: false,
+        async: false,
+        success: function (xml) {
+            var all = $(xml).children('user');
+            var image_link = $(all).children('image').text();
+            var first_name = $(all).children('first').text();
+            var last_name = $(all).children('last').text();
+
+            $('#first_name').text(first_name);
+            $('#last_name').text(last_name);
+            $('#image_link').attr('src','../PHPs/'+image_link);
+
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            // Handle errors here
+            console.log('ERRORS: ' + textStatus);
+            console.log(jqXHR.responseText);
+            // STOP LOADING SPINNER
+        }
+    });
+
 </script>
 
 

@@ -3,6 +3,7 @@ header('Content-type: text/xml');
 include('../Includes/db_connection.php');
 include('../Includes/functions.php');
 session_start();
+$xml_output = '';
 
 $isLogin = '';
 $email = '';
@@ -21,9 +22,9 @@ if (isset($_GET['nom']) && isset($_GET['inbox'])) {
     $nom = $_GET['nom'];
     $query_select = Select_query_email($email, 'receiver','sending_time');
     $result = perform_query($connection, $query_select);
+
     $xml_output = xml_builder_mails_profile($result, $email, $nom);
 }
-
 if (isset($_GET['nom']) && isset($_GET['send'])) {
     $xml_output = '';
     $nom = $_GET['nom'];
@@ -31,6 +32,8 @@ if (isset($_GET['nom']) && isset($_GET['send'])) {
     $result = perform_query($connection, $query_select);
     $xml_output = xml_builder_mails_send($result, $email, $nom);
 }
+
+
 
 
 echo "<?xml version='1.0' encoding='UTF-8'?>";
