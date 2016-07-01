@@ -9,21 +9,17 @@
     <meta name="MSSmartTagsPreventParsing" content="true" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-
-
     <style type="text/css" media="all">
-        @import "css/info.css";
-        @import "css/main.css";
-        @import "css/widgEditor.css";
+        @import "../Stylesheets/css/info.css";
+        @import "../Stylesheets/css/main.css";
+        @import "../Stylesheets/css/widgEditor.css";
     </style>
-
-    <script type="text/javascript" src="scripts/widgEditor.js"></script>
-
+    <script type="text/javascript" src="../JavaScript/widgEditor.js"></script>
 </head>
 <body>
 <div id="container">
     <div id="content">
-        <form action="../PHPs/email_composer.php" method="post">
+        <form action="../PHPs/EmailComposer.php" method="post">
             <h5>To:</h5>
             <input type="text" name="to" id="to_someone">
             <h5>Subject:</h5>
@@ -36,16 +32,10 @@
         </form>
     </div>
 </div>
-
-
 </body>
 </html>
 <script src="./jquery-1.12.0.js"></script>
 <script type="text/javascript">
-
-
-
-
     $('#submit').on('click', sender);
     function sender() {
 

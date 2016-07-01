@@ -5,28 +5,29 @@
     <title>ajax</title>
 </head>
 <body>
+<!--<form action="../PHPs/Captcha.php" method="post">-->
+<!--<input type="checkbox" name="check" value="on">-->
+<!--<input type="submit" name="submit">-->
+<!--</form>-->
 
+<div id="container">
+
+</div>
 </body>
 </html>
-
 <script src="./jquery-1.12.0.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-
-
         $.ajax({
             type: "post",
-            url: "../PHPs/ajax.php",
-            data: {
-
-            },
+            url: "../PHPs/Captcha.php",
+            data: {},
             dataType: "text",
             cache: false,
             async: false,
             success: function (msg) {
-                alert(msg);
+                document.getElementById('container').innerHTML = msg;
             }
-
         });
     });
 </script>

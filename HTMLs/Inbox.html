@@ -4,23 +4,20 @@
     <title>IE Project 4</title>
     <link rel="stylesheet" type="text/css" href="../Stylesheets/Inbox.css">
     <style>
-        #name {
-
-        }
-
         #name img {
             width: 42px;
             height: 42px;
         }
+
         #name span, a {
             margin-right: 5px;
             color: white;
             text-decoration: none;
         }
+
         #name a:hover {
             color: red;
         }
-
     </style>
 </head>
 <body>
@@ -31,10 +28,10 @@
     <div id="name">
 
         <a href="Profile.html">Profile</a>
-        <a href="#">Logout</a>
+        <a href="../PHPs/Logout.php">Logout</a>
         <span id="first_name">mehdi</span>
         <span id="last_name">mousavi</span>
-        <img src="../images/hesam.jpg"/>
+        <img src="../Images/hesam.jpg"/>
     </div>
 
 </div>
@@ -44,7 +41,7 @@
     <h5 id="compose">Compose</h5>
     <h5 id="inbox">Inbox</h5>
     <h5 id="sent">Sent</h5>
-    Num of Mail:<input type="text" name="numOfMail" id="numOfMail" value="4"><br>
+    Num of Mail:<input type="text" name="numOfMail" id="numOfMail" value="5"><br>
     <input type="radio" name="sortby" id="date" checked="checked" value="date">Sort By Date<br>
     <input type="radio" name="sortby" id="sender" checked="checked" value="sender">Sort By sender<br>
     <input type="radio" name="sortby" id="attach" checked="checked" value="attach">Sort By attachment<br>
@@ -66,7 +63,7 @@
         var numOfMail = $("#numOfMail").val();
         $.ajax({
             type: "GET",
-            url: "../PHPs/mail.php?inbox=true&nom=" + numOfMail,
+            url: "../PHPs/Inbox.php?inbox=true&nom=" + numOfMail,
             dataType: "xml",
             cache: false,
             async: false,
@@ -88,7 +85,7 @@
                     }
                 });
                 $(document).on('click', '.eachMail', function () {
-                    window.location = "../server.php?email=true & from=" + $(this).children(".from").text() + "& date=" + $(this).children(".date").text();
+                    window.location = "../PHPs/mailReader.php?email=true & from=" + $(this).children(".from").text() + "& date=" + $(this).children(".date").text();
                 });
             }, error: function (jqXHR, textStatus, errorThrown) {
 
@@ -103,15 +100,17 @@
             numOfMail = $("#numOfMail").val();
             $.ajax({
                 type: "GET",
-                url: "../server.php?refresh=true&nom=" + numOfMail,
+                url: "../PHPs/Inbox.php?inbox=true&nom=" + numOfMail,
+
                 dataType: "xml",
                 cache: false,
                 async: false,
                 success: function (xml) {
+                    $("#mails").empty();
                     var all = $(xml).children('mails').children("mail");
                     all.each(function () {
                         var email = '<div class="eachMail">' + '<div class="from">' + $(this).children("from").text();
-                        email += '<div class="subject">' + $(this).children("subject").text();
+                        email += '</div><div class="subject">' + $(this).children("subject").text();
                         email += '</div><div class="text">' + $(this).children("text").text();
                         email += '</div><div class="date">' + $(this).children("date").text() + '</div></div>';
                         $("#mails").append(email);
@@ -125,7 +124,7 @@
                         }
                     });
                     $(document).on('click', '.eachMail', function () {
-                        window.location = "../server.php?email=true & from=" + $(this).children(".from").text() + "& date=" + $(this).children(".date").text();
+                        window.location = "../PHPs/mailReader.php?email=true & from=" + $(this).children(".from").text() + "& date=" + $(this).children(".date").text();
                     });
                 }, error: function (jqXHR, textStatus, errorThrown) {
                     // Handle errors here
@@ -136,25 +135,27 @@
             });
         });
         $(document).on('click', '#compose', function () {
-            window.location = "../PHPs/mail.php?compose=true";
+            window.location = "ComposeEmail.html";
         });
         $(document).on('click', '#inbox', function () {
             numOfMail = $("#numOfMail").val();
             $("#mails").empty();
             $.ajax({
                 type: "GET",
-                url: "../server.php?inbox=true&nom=" + numOfMail,
+                url: "../PHPs/Inbox.php?inbox=true&nom=" + numOfMail,
                 dataType: "xml",
                 cache: false,
                 async: false,
                 success: function (xml) {
+                    $("#mails").empty();
                     var all = $(xml).children('mails').children("mail");
                     all.each(function () {
-                        var email = 'div class="eachMail">' + '<div class="from">' + $(this).children("from").text();
+                        var email = '<div class="eachMail">' + '<div class="from">' + $(this).children("from").text();
                         email += '</div><div class="subject">' + $(this).children("subject").text();
                         email += '</div><div class="text">' + $(this).children("text").text();
                         email += '</div><div class="date">' + $(this).children("date").text() + '</div></div>';
                         $("#mails").append(email);
+
                         if ($(this).attr("read") !== undefined) {//the email has been read
                             $("mails").children(":last").css('background-color', 'green');
                         } else if ($(this).attr("spam") !== undefined) {
@@ -164,7 +165,7 @@
                         }
                     });
                     $(document).on('click', '.eachMail', function () {
-                        window.location = "../server.php?email=true & from=" + $(this).children(".from").text() + "& date=" + $(this).children(".date").text();
+                        window.location = "../PHPs/mailReader.php?email=true & from=" + $(this).children(".from").text() + "& date=" + $(this).children(".date").text();
                     });
                 }, error: function (jqXHR, textStatus, errorThrown) {
                     // Handle errors here
@@ -179,18 +180,20 @@
             $("#mails").empty();
             $.ajax({
                 type: "GET",
-                url: "../server.php?sent=true&nom=" + numOfMail,
+                url: "../PHPs/Inbox.php?send=true&nom=" + numOfMail,
                 dataType: "xml",
                 cache: false,
                 async: false,
                 success: function (xml) {
+                    $("#mails").empty();
                     var all = $(xml).children('mails').children("mail");
                     all.each(function () {
-                        var email = 'div class="eachMail">' + '<div class="from">' + $(this).children("to").text();
+                        var email = '<div class="eachMail">' + '<div class="from">' + $(this).children("from").text();
                         email += '</div><div class="subject">' + $(this).children("subject").text();
                         email += '</div><div class="text">' + $(this).children("text").text();
                         email += '</div><div class="date">' + $(this).children("date").text() + '</div></div>';
                         $("#mails").append(email);
+
                         if ($(this).attr("read") !== undefined) {//the email has been read
                             $("mails").children(":last").css('background-color', 'green');
                         } else if ($(this).attr("spam") !== undefined) {
@@ -200,7 +203,7 @@
                         }
                     });
                     $(document).on('click', '.eachMail', function () {
-                        window.location = "../server.php?email=true & from=" + $(this).children(".to").text() + "& date=" + $(this).children(".date").text();
+                        window.location = "../PHPs/mailReader.php?email=true & from=" + $(this).children(".to").text() + "& date=" + $(this).children(".date").text();
                     });
                 }, error: function (jqXHR, textStatus, errorThrown) {
                     // Handle errors here
@@ -212,6 +215,8 @@
         });
         $('input[type=radio][name=sortby]').change(function () {
             numOfMail = $("#numOfMail").val();
+            alert(numOfMail);
+
             $("#mails").empty();
             $.ajax({
                 type: "GET",
@@ -236,7 +241,7 @@
                         }
                     });
                     $(document).on('click', '.eachMail', function () {
-                        window.location = "../server.php?email=true & from=" + $(this).children(".from").text() + "& date=" + $(this).children(".date").text();
+                        window.location = "../PHPs/mailReader.php?email=true & from=" + $(this).children(".from").text() + "& date=" + $(this).children(".date").text();
                     });
                 }, error: function (jqXHR, textStatus, errorThrown) {
                     // Handle errors here

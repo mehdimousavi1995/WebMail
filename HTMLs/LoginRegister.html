@@ -4,16 +4,13 @@
     <title>IE Project 4</title>
     <link rel="stylesheet" type="text/css" href="../Stylesheets/LoginRegister.css">
 
+    <style>
+
+    </style>
+
 </head>
 <body>
 <div id="container">
-
-
-        <span id="captcha_code" style="display:none; position: absolute;">
-            <?php
-            echo '' . $_SESSION['captcha']['code'] . '';
-            ?>
-        </span>
 
 
     <div class="forms">
@@ -23,16 +20,18 @@
                 <h5>Last Name :</h5>
                 <h5>Email :</h5>
                 <h5>Password :</h5>
-                <h5>Image :</h5>
-                <input type="submit" value="Register" name="Register">
+                <h5 style="margin-top: 50px;">Security code :</h5>
+                <h5 style="margin-top: 20px;">Image :</h5>
+                <input type="submit" value="Register" name="Register" id="register">
             </div>
             <div class="inputs">
                 <input type="text" name="firstname">
                 <input type="text" name="lastname">
                 <input type="email" name="email">
                 <input type="password" name="pass">
+                <div class="cpatcha"></div>
+                <input type="text" name="captcha">
                 <input type="file" name="image">
-                <!--                <input type="text" name="captcha_input">-->
             </div>
         </form>
     </div>
@@ -41,13 +40,15 @@
             <div class="titles">
                 <h5>Email :</h5>
                 <h5>Password :</h5>
-                <input type="checkbox" id="checkremember"> <h6>Remember me</h6>
+                <h5 style="margin-top: 50px;">Security code :</h5>
+                <input style="margin-top: 50px;" type="checkbox" name="rememberMe" id="checkremember" value="on"> <h6 style="margin-top: 50px;">Remember me</h6>
                 <input type="submit" value="Login" name="Login">
             </div>
             <div class="inputs">
                 <input type="email" name="email">
                 <input type="password" name="pass">
-                <!--                <input type="text" id="captcha_input">-->
+                <div class="cpatcha"></div>
+                <input type="text" name="captcha">
 
             </div>
         </form>
@@ -59,49 +60,48 @@
 <script type="text/javascript" src="./jquery-1.12.0.js"></script>
 <script>
 
-//    $(document).ready(function () {
-//        $.ajax({
-//            type: "post",
-//            url: "../PHPs/ajax.php",
-//            data: {},
-//            dataType: "text",
-//            cache: false,
-//            async: false,
-//            success: function (msg) {
-//                alert(msg);
-//            }
-//
-//        });
-//    });
+        $(document).ready(function () {
+            $.ajax({
+                type: "post",
+                url: "../PHPs/Captcha.php",
+                data: {},
+                dataType: "text",
+                cache: false,
+                async: false,
+                success: function (msg) {
+                    $('.cpatcha').html(msg);
+                }
+            });
+        });
 
 
-//    $.post("../PHPs/login.php", {login: "user"}, function (data) {
-//        console.log(data);
-//        if (data == 1) {
-//            var url = "../html/inbox.html?" + getCookie("username");
-//            alert(url);
-//            setTimeout(function () {
-//                window.location = url;
-//            }, 1000);
-//        }
-//    });
+    //    $.post("../PHPs/login.php", {login: "user"}, function (data) {
+    //        console.log(data);
+    //        if (data == 1) {
+    //            var url = "../html/inbox.html?" + getCookie("username");
+    //            alert(url);
+    //            setTimeout(function () {
+    //                window.location = url;
+    //            }, 1000);
+    //        }
+    //    });
 
 
-//    function getCookie() {
-//        var cookies;
-//        function readCookie(cname,c,C,i){
-//            if(cookies){ return cookies[cname]; }
-//            c = document.cookie.split('; ');
-//            cookies = {};
-//            for(i=c.length-1; i>=0; i--){
-//                C = c[i].split('=');
-//                cookies[C[0]] = C[1];
-//            }
-//
-//            return cookies[cname];
-//        }
-//    }
-//    alert(getCookie('id'));
-//
+    //    function getCookie() {
+    //        var cookies;
+    //        function readCookie(cname,c,C,i){
+    //            if(cookies){ return cookies[cname]; }
+    //            c = document.cookie.split('; ');
+    //            cookies = {};
+    //            for(i=c.length-1; i>=0; i--){
+    //                C = c[i].split('=');
+    //                cookies[C[0]] = C[1];
+    //            }
+    //
+    //            return cookies[cname];
+    //        }
+    //    }
+    //    alert(getCookie('id'));
+    //
 
 </script>

@@ -1,5 +1,5 @@
 <?php
-include ('../includes/db_connection.php');
+include('../Includes/db_connection.php');
 if(isset($_GET['add']))
 {
     $username = $_GET['add'];
@@ -22,4 +22,4 @@ if(isset($_GET['add']))
 
 }
 
-include ('../includes/db_connection_close.php');
+include('../Includes/db_connection_close.php');
