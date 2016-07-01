@@ -7,6 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
 <body>
+<h1>Users</h1>
 <!--<div class="person">-->
 <!--<img src=""><br>-->
 <!--<span>First Name: </span>-->
@@ -52,7 +53,7 @@
                 var data = $(xml).children('users');
 
                 data.children('user').each(function () {
-                    var person = '<div class="person"><img src="' + $(this).children('img').text() + '"><br><span>First Name: </span><span >' + $(this).children('first').text() + '</span><br><span>Last Name: </span><span>' + $(this).children('last').text() + '</span><br><span>Email: </span><span id="username" class="email">' + $(this).children('username').text() + '</span><br><button type="button" class="add">Add to my contacts</button></div>';
+                    var person = '<div class="person"><img src="' +'../PHPs/'+ $(this).children('img').text() + '"><br><span>First Name: </span><span >' + $(this).children('first').text() + '</span><br><span>Last Name: </span><span>' + $(this).children('last').text() + '</span><br><span>Email: </span><span id="username" class="email">' + $(this).children('username').text() + '</span><br><button type="button" class="add">Add to my contacts</button></div>';
                     $('body').append(person);
                 });
                 $('.add').on('click', function () {

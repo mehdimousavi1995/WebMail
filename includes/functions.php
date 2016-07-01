@@ -73,8 +73,39 @@ function Select_query_email($email, $senderOrReceiver, $sortby)
 
 //*********************************************************************** END *************************************************************
 
+//**********************************************************CRUD OPERATION FOR myContact *******************************************************************************
+function Insert_query_myContact($email, $username)
+{
 
-function upload_image($email,$target)
+    $query_insert = "INSERT INTO myContact ";
+    $query_insert .= "(";
+    $query_insert .= "_user,user_contact,is_accepted";
+    $query_insert .= ") VALUES (";
+    $query_insert .= "'{$email}','{$username}',0";
+    $query_insert .= ")";
+    return $query_insert;
+
+}
+
+function Delete_query_myContact()
+{
+}
+
+function Update_query_myContact()
+{
+}
+
+function Select_query_myContact($email)
+{
+    $query_select = "SELECT * FROM myContact ";
+    $query_select .= "WHERE _user = '{$email}' ";
+    return $query_select;
+}
+
+//*********************************************************************** END *************************************************************
+
+
+function upload_image($email, $target)
 {
     $target_dir = $target;
     $image_link = $target_dir . $email . '_' . basename($_FILES["image"]["name"]);
@@ -199,15 +230,17 @@ function xml_builder_data($connection, $email)
     return $xml_output;
 }
 
-function xml_builder_users($result)
+function xml_builder_users($result, $email)
 {
     $xml_output = '<users>';
     while ($row = mysqli_fetch_assoc($result)) {
-        $xml_output .= '<user>';
-        $xml_output .= '<img>' . $row['Image_Link'] . '</img>';
-        $xml_output .= '<first>' . $row['FirstName'] . '</first>';
-        $xml_output .= '<last>' . $row['LastName'] . '</last>';
-        $xml_output .= '<username>' . $row['Email'] . '</username></user>';
+        if ($row['Email'] != $email) {
+            $xml_output .= '<user>';
+            $xml_output .= '<img>' . $row['Image_Link'] . '</img>';
+            $xml_output .= '<first>' . $row['FirstName'] . '</first>';
+            $xml_output .= '<last>' . $row['LastName'] . '</last>';
+            $xml_output .= '<username>' . $row['Email'] . '</username></user>';
+        }
     }
     $xml_output .= '</users>';
     return $xml_output;
