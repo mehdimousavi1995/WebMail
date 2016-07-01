@@ -20,7 +20,7 @@ if (isset($_COOKIE['id'])) {
 if (isset($_GET['nom']) && isset($_GET['inbox'])) {
     $xml_output = '';
     $nom = $_GET['nom'];
-    $query_select = Select_query_email($email, 'receiver','sending_time');
+    $query_select = Select_query_email($email, 'receiver', 'sending_time');
     $result = perform_query($connection, $query_select);
 
     $xml_output = xml_builder_mails_profile($result, $email, $nom);
@@ -29,12 +29,11 @@ if (isset($_GET['nom']) && isset($_GET['send'])) {
     $xml_output = '';
     $nom = $_GET['nom'];
     $query_select = Select_query_email($email, 'sender');
+    
+    
     $result = perform_query($connection, $query_select);
     $xml_output = xml_builder_mails_send($result, $email, $nom);
 }
-
-
-
 
 echo "<?xml version='1.0' encoding='UTF-8'?>";
 echo $xml_output;

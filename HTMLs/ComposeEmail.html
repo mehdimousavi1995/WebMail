@@ -3,20 +3,25 @@
 <head>
     <title>IE Project 4</title>
     <link rel="stylesheet" type="text/css" href="../Stylesheets/ComposeEmail.css">
-    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-    <meta name="author" content="The Man in Blue" />
-    <meta name="robots" content="all" />
-    <meta name="MSSmartTagsPreventParsing" content="true" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+    <meta name="author" content="The Man in Blue"/>
+    <meta name="robots" content="all"/>
+    <meta name="MSSmartTagsPreventParsing" content="true"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
     <style type="text/css" media="all">
         @import "../Stylesheets/css/info.css";
         @import "../Stylesheets/css/main.css";
         @import "../Stylesheets/css/widgEditor.css";
+
+        /*#body{*/
+            /*background-image: url("sia.jpg");*/
+        /*}*/
     </style>
+
     <script type="text/javascript" src="../JavaScript/widgEditor.js"></script>
 </head>
-<body>
+<body id="body">
 <div id="container">
     <div id="content">
         <form action="../PHPs/EmailComposer.php" method="post">
@@ -28,7 +33,7 @@
             <textarea id="noise" name="text" class="widgEditor nothing"></textarea>
             <h5 id="attach">Attachment:</h5>
             <input type="file" name="attachment">
-                <input type="submit" value="Send" name="submit" id="submit">
+            <input type="submit" value="Send" name="submit" id="submit">
         </form>
     </div>
 </div>
@@ -36,6 +41,13 @@
 </html>
 <script src="./jquery-1.12.0.js"></script>
 <script type="text/javascript">
+
+    $().ready(function () {
+        $('#body').css('backgroundImage','url(sia.jpg)');
+
+    });
+
+
     $('#submit').on('click', sender);
     function sender() {
 
