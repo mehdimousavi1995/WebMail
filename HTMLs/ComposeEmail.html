@@ -43,7 +43,23 @@
 <script type="text/javascript">
 
     $().ready(function () {
-        $('#body').css('backgroundImage','url(sia.jpg)');
+        $.ajax({
+            type: "GET",
+            url: "../PHPs/BackgroundImage.php?back=true",
+            dataType: "text",
+            data: {},
+            cache: false,
+            async: false,
+            success: function (msg) {
+//                alert(msg);
+                $('body').css({'background-image':'url('+'../PHPs/'+msg+')'});
+            }, error: function (jqXHR, textStatus, errorThrown) {
+                // Handle errors here
+                console.log('ERRORS: ' + textStatus);
+                console.log(jqXHR.responseText);
+                // STOP LOADING SPINNER
+            }
+        });
 
     });
 

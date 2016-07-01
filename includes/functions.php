@@ -13,6 +13,14 @@ function Insert_query_users($first_name, $last_name, $email, $password, $image_l
     return $query_insert;
 }
 
+function Update_query_users_back_link($back_link, $email)
+{
+    $query_update = "UPDATE users SET ";
+    $query_update .= "background_Link = '{$back_link}' ";
+    $query_update .= "WHERE email = '{$email}' ";
+    return $query_update;
+}
+
 function Update_query_users($DateTime, $email)
 {
     $query_update = "UPDATE users SET ";
@@ -66,9 +74,9 @@ function Select_query_email($email, $senderOrReceiver, $sortby)
 //*********************************************************************** END *************************************************************
 
 
-function upload_image($email)
+function upload_image($email,$target)
 {
-    $target_dir = "uploads/";
+    $target_dir = $target;
     $image_link = $target_dir . $email . '_' . basename($_FILES["image"]["name"]);
 
     $target_file = $image_link;
@@ -154,7 +162,6 @@ function xml_builder_mails_send($result, $email, $nom)
     $xml_output .= '</mails>';
     return $xml_output;
 }
-
 
 function xml_builder_data($connection, $email)
 {

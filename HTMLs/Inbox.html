@@ -31,8 +31,9 @@
         <a href="../PHPs/Logout.php">Logout</a>
         <span id="first_name"></span>
         <span id="last_name"></span>
+        <a href="background.html">Upload Background Image</a>
         <img id="image_link" src="../Images/defult.png"/>
-        <a href="background.html"></a>
+
     </div>
 
 </div>
@@ -62,6 +63,28 @@
 <script src="./jquery-1.12.0.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+
+
+        $.ajax({
+            type: "GET",
+            url: "../PHPs/BackgroundImage.php?back=true",
+            dataType: "text",
+            data: {},
+            cache: false,
+            async: false,
+            success: function (msg) {
+//                alert(msg);
+
+                $('body').css({'background-image':'url('+'../PHPs/'+msg+')'});
+
+            }, error: function (jqXHR, textStatus, errorThrown) {
+                // Handle errors here
+                console.log('ERRORS: ' + textStatus);
+                console.log(jqXHR.responseText);
+                // STOP LOADING SPINNER
+            }
+        });
+
         var numOfMail = $("#numOfMail").val();
         $.ajax({
             type: "GET",

@@ -35,7 +35,7 @@ if (isset($_POST['Register']) && isset($_POST['firstname']) &&
         echo '<a href="../HTMLs/LoginRegister.html">LoginRegister</a>';
     } else {
         $DateTime = date("h:i Y-m-d");
-        $image_link = upload_image($email);
+        $image_link = upload_image($email,"uploads/");
         $query_insert = Insert_query_users($first_name, $last_name, $email, $password, $image_link, $background_link, $DateTime);
         $result = perform_query($connection, $query_insert);
         set_session_login($first_name, $last_name, $email);

@@ -6,9 +6,8 @@ if(isset($_GET['add']))
 
     if(isset($_COOKIE['id']))
     {
-        $me=$_COOKIE['id'];
-
-        //check if user not exist in my account 
+        
+         
 
         $query_insert = "INSERT INTO myContact";
         $query_insert .= "(";

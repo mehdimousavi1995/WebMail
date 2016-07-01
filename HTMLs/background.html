@@ -1,20 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <title>IE Project 4</title>
+    <link rel="stylesheet" type="text/css" href="../Stylesheets/LoginRegister.css">
     <title>Select Background</title>
     <style>
         body {
-            background-color: #ff00ff;
+            background-color: #5ff0ff;
         }
     </style>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "../PHPs/BackgroundImage.php?back=true",
+                dataType: "text",
+                data: {},
+                cache: false,
+                async: false,
+                success: function (msg) {
+//                alert(msg);
+                    $('body').css({'background-image':'url('+'../PHPs/'+msg+')'});
+                }, error: function (jqXHR, textStatus, errorThrown) {
+                    // Handle errors here
+                    console.log('ERRORS: ' + textStatus);
+                    console.log(jqXHR.responseText);
+                    // STOP LOADING SPINNER
+                }
+            });
+        })
+    </script>
 </head>
 <body>
 
-<form method="post" action="../PHPs/BackgroundImage.php">
-    <h5>Upload Image :</h5>
-    <input type="file" name="image">
-    <input type="submit" name="submit">
+<form method="post" enctype="multipart/form-data" action="../PHPs/BackgroundImage.php">
+
+    <div class="titles">
+        <h5>Upload Image :</h5>
+        <input type="submit" value="Upload Image" name="submit">
+    </div>
+    <div class="inputs">
+        <input type="file" name="image">
+    </div>
 </form>
 
 

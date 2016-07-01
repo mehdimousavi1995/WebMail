@@ -6,6 +6,10 @@
     <link rel="stylesheet" type="text/css" href="../Stylesheets/LoginRegister.css">
     <link rel="stylesheet" type="text/css" href="../Stylesheets/Users.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <style>
+
+    </style>
 </head>
 <body>
 <div id="data">
@@ -38,8 +42,6 @@
 <script src="./jquery-1.12.0.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-
-
         $.ajax({
             type: "GET",
             url: "../PHPs/Profile.php?profile=true",
@@ -49,10 +51,10 @@
             success: function (xml) {
                 var data = $(xml).children('data');
                 var contacts = data.children('contacts');
-                var it = '<img src="'+'../PHPs/' + data.children('img').text() + '"><br><span>First Name: </span><sapn >' + data.children('first').text() + '</span><br><span>Last Name: </span><span>' + data.children('last').text() + '</span><br><span>Email: </span><span>' + data.children('username').text() + '</span><br><span>Last Seen: </span><span>'+data.children('date').text()+'</span><br>';
+                var it = '<img src="' + '../PHPs/' + data.children('img').text() + '"><br><span>First Name: </span><sapn >' + data.children('first').text() + '</span><br><span>Last Name: </span><span>' + data.children('last').text() + '</span><br><span>Email: </span><span>' + data.children('username').text() + '</span><br><span>Last Seen: </span><span>' + data.children('date').text() + '</span><br>';
                 $('#data').append(it);
                 contacts.children('contact').each(function () {
-                    var person = '<div class="person"><img src="' +'../PHPs/'+ $(this).children('img').text() + '"><br><span>First Name: </span><span >' + $(this).children('first').text() + '</span><br><span>Last Name: </span><span>' + $(this).children('last').text() + '</span><br><span>Email: </span><span>' + $(this).children('username').text() + '</span><br></div>';
+                    var person = '<div class="person"><img src="' + '../PHPs/' + $(this).children('img').text() + '"><br><span>First Name: </span><span >' + $(this).children('first').text() + '</span><br><span>Last Name: </span><span>' + $(this).children('last').text() + '</span><br><span>Email: </span><span>' + $(this).children('username').text() + '</span><br></div>';
                     $("#contacts").append(person);
                 });
             }, error: function (jqXHR, textStatus, errorThrown) {
@@ -62,5 +64,26 @@
                 // STOP LOADING SPINNER
             }
         });
+
+        $.ajax({
+            type: "GET",
+            url: "../PHPs/BackgroundImage.php?back=true",
+            dataType: "text",
+            data: {},
+            cache: false,
+            async: false,
+            success: function (msg) {
+//                alert(msg);
+
+                $('body').css({'background-image':'url('+'../PHPs/'+msg+')'});
+
+            }, error: function (jqXHR, textStatus, errorThrown) {
+                // Handle errors here
+                console.log('ERRORS: ' + textStatus);
+                console.log(jqXHR.responseText);
+                // STOP LOADING SPINNER
+            }
+        });
+
     });
 </script>
