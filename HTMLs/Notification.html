@@ -72,7 +72,7 @@
                         method: 'get',
                         url: '../PHPs/Notification.php?reject=' + username,
                         success: function (data) {
-                            alert("successfuly added to your contacts.");
+                            alert("You reject "+username +'friend request ... :)');
                             x.css('background-color', 'yellow');
                         }, error: function (jqXHR, textStatus, errorThrown) {
                             // Handle errors here

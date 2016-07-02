@@ -112,6 +112,46 @@ function Select_query_myContact($email)
 //*********************************************************************** END *************************************************************
 
 
+//**********************************************************CRUD OPERATION FOR blockListblockList *******************************************************************************
+function Insert_query_blockList($email, $username)
+{
+    $query_insert = "INSERT INTO block_list ";
+    $query_insert .= "(";
+    $query_insert .= "_user,block";
+    $query_insert .= ") VALUES (";
+    $query_insert .= "'{$email}','{$username}'";
+    $query_insert .= ")";
+    return $query_insert;
+}
+
+function Delete_query_blockList($username,$email)
+{
+    $query_delete = "DELETE FROM block_list ";
+    $query_delete .= "WHERE _user = '{$email}' and block = '{$username}'";
+    return $query_delete;
+}
+
+function Update_query_blockList($username,$email)
+{
+    $query_update = "UPDATE myContact SET ";
+    $query_update .= "is_accepted = 1 ";
+    $query_update .= "WHERE _user = '{$email}' and user_contact = '{$username}' ";
+    return $query_update;
+}
+
+function Select_query_blockList($email)
+{
+    $query_select = "SELECT * FROM block_list ";
+    $query_select .= "WHERE _user = '{$email}' ";
+    return $query_select;
+}
+
+//*********************************************************************** END *************************************************************
+
+//**********************************************************CRUD OPERATION FOR blockListblockList *******************************************************************************
+
+
+
 function upload_image($email, $target)
 {
     $target_dir = $target;
@@ -263,6 +303,27 @@ function xml_builder_Notification($result, $connection)
         $user_query_select = Select_query_users($current);
         $res = perform_query($connection, $user_query_select);
         
+        while ($r = mysqli_fetch_assoc($res)) {
+            $xml_output .= '<user>';
+            $xml_output .= '<img>' . $r['Image_Link'] . '</img>';
+            $xml_output .= '<first>' . $r['FirstName'] . '</first>';
+            $xml_output .= '<last>' . $r['LastName'] . '</last>';
+            $xml_output .= '<username>' . $r['Email'] . '</username></user>';
+        }
+    }
+    $xml_output .= '</users>';
+    return $xml_output;
+
+}
+
+function xml_builder_Block($result, $connection)
+{
+    $xml_output = '<users>';
+    while ($row = mysqli_fetch_assoc($result)) {
+        $current = $row['block'];
+        $user_query_select = Select_query_users($current);
+        $res = perform_query($connection, $user_query_select);
+
         while ($r = mysqli_fetch_assoc($res)) {
             $xml_output .= '<user>';
             $xml_output .= '<img>' . $r['Image_Link'] . '</img>';

@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d9e3820-4875-4d81-9f5d-aef400bdfc06" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HTMLs/Notification.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPs/Notification.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HTMLs/BlockList.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPs/BlockList.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTMLs/Inbox.html" afterPath="$PROJECT_DIR$/HTMLs/Inbox.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTMLs/LoginRegister.html" afterPath="$PROJECT_DIR$/HTMLs/LoginRegister.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTMLs/Users.html" afterPath="$PROJECT_DIR$/HTMLs/Users.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTMLs/background.html" afterPath="$PROJECT_DIR$/HTMLs/background.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Includes/functions.php" afterPath="$PROJECT_DIR$/Includes/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHPs/AddToContact.php" afterPath="$PROJECT_DIR$/PHPs/AddToContact.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTMLs/Notification.html" afterPath="$PROJECT_DIR$/HTMLs/Notification.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHPs/Notification.php" afterPath="$PROJECT_DIR$/PHPs/Notification.php" />
     </list>
     <ignored path="MailServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,29 +29,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Users.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HTMLs/Users.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="6" column="72" selection-start-line="3" selection-start-column="2" selection-end-line="6" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Includes/functions.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="205">
-              <caret line="89" column="23" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+              <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
               <folding>
                 <element signature="n#Insert_query_users#0;n#!!top" expanded="false" />
                 <element signature="n#Delete_query_users#0;n#!!top" expanded="false" />
-                <element signature="n#Insert_query_email#0;n#!!top" expanded="false" />
                 <element signature="n#Delete_query_email#0;n#!!top" expanded="false" />
                 <element signature="n#Update_query_email#0;n#!!top" expanded="false" />
-                <element signature="n#Insert_query_myContact#0;n#!!top" expanded="false" />
+                <element signature="n#Select_query_email#0;n#!!top" expanded="false" />
+                <element signature="n#Delete_query_myContact#0;n#!!top" expanded="false" />
                 <element signature="n#Select_query_myContact#0;n#!!top" expanded="false" />
+                <element signature="n#Insert_query_blockList#0;n#!!top" expanded="false" />
+                <element signature="n#Update_query_blockList#0;n#!!top" expanded="false" />
                 <element signature="n#upload_image#0;n#!!top" expanded="false" />
                 <element signature="n#perform_query#0;n#!!top" expanded="false" />
                 <element signature="n#set_session_login#0;n#!!top" expanded="false" />
@@ -63,44 +52,59 @@
                 <element signature="n#xml_builder_mails_profile#0;n#!!top" expanded="false" />
                 <element signature="n#xml_builder_mails_send#0;n#!!top" expanded="false" />
                 <element signature="n#xml_builder_data#0;n#!!top" expanded="false" />
-                <marker date="1467417313170" expanded="true" signature="281:298" ph="INSERT INTO users... " />
-                <marker date="1467417313170" expanded="true" signature="768:784" ph="UPDATE users... " />
-                <marker date="1467417313170" expanded="true" signature="995:1011" ph="UPDATE users... " />
-                <marker date="1467417313170" expanded="true" signature="1310:1329" ph="SELECT * FRO... users" />
-                <marker date="1467417313170" expanded="true" signature="1839:1851" ph="INSERT INTO users... " />
-                <marker date="1467417313170" expanded="true" signature="1839:1856" ph="INSERT INTO email... " />
-                <marker date="1467417313170" expanded="true" signature="2343:2362" ph="SELECT * FRO... Email" />
-                <marker date="1467417313170" expanded="true" signature="2861:2882" ph="INSERT INTO myContact... " />
-                <marker date="1467417313170" expanded="true" signature="3182:3203" ph="DELETE FROM " />
-                <marker date="1467417313170" expanded="true" signature="3193:3203" ph="UPDATE myCon... " />
-                <marker date="1467417313170" expanded="true" signature="3391:3411" ph="UPDATE myCon... " />
-                <marker date="1467417313170" expanded="true" signature="3631:3645" ph="SELECT * FRO... Email" />
-                <marker date="1467417313170" expanded="true" signature="3631:3648" ph="SELECT * FRO... myC" />
-                <marker date="1467417313170" expanded="true" signature="3631:3654" ph="SELECT * FRO... myContact" />
-                <marker date="1467417313170" expanded="true" signature="7346:7391" ph="SELECT user_... myContact" />
+                <marker date="1467421676158" expanded="true" signature="281:298" ph="INSERT INTO users... " />
+                <marker date="1467421676158" expanded="true" signature="768:784" ph="UPDATE users... " />
+                <marker date="1467421676158" expanded="true" signature="995:1011" ph="UPDATE users... " />
+                <marker date="1467421676158" expanded="true" signature="1310:1329" ph="SELECT * FRO... users" />
+                <marker date="1467421676158" expanded="true" signature="1839:1851" ph="INSERT INTO users... " />
+                <marker date="1467421676158" expanded="true" signature="1839:1856" ph="INSERT INTO email... " />
+                <marker date="1467421676158" expanded="true" signature="2343:2362" ph="SELECT * FRO... Email" />
+                <marker date="1467421676158" expanded="true" signature="2861:2882" ph="INSERT INTO myContact... " />
+                <marker date="1467421676158" expanded="true" signature="3182:3203" ph="DELETE FROM " />
+                <marker date="1467421676158" expanded="true" signature="3193:3203" ph="UPDATE myCon... " />
+                <marker date="1467421676158" expanded="true" signature="3391:3411" ph="UPDATE myCon... " />
+                <marker date="1467421676158" expanded="true" signature="3631:3645" ph="SELECT * FRO... Email" />
+                <marker date="1467421676158" expanded="true" signature="3631:3648" ph="SELECT * FRO... myC" />
+                <marker date="1467421676158" expanded="true" signature="3631:3654" ph="SELECT * FRO... myContact" />
+                <marker date="1467421676158" expanded="true" signature="4131:4153" ph="INSERT INTO block_list... " />
+                <marker date="1467421676158" expanded="true" signature="4431:4443" ph="DELETE FROM " />
+                <marker date="1467421676158" expanded="true" signature="4431:4453" ph="DELETE FROM " />
+                <marker date="1467421676158" expanded="true" signature="4634:4654" ph="UPDATE myCon... " />
+                <marker date="1467421676158" expanded="true" signature="4874:4888" ph="SELECT * FRO... myContact" />
+                <marker date="1467421676158" expanded="true" signature="4874:4898" ph="SELECT * FRO... block_list" />
+                <marker date="1467421676158" expanded="true" signature="8770:8815" ph="SELECT user_... myContact" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Notification.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HTMLs/Notification.html">
+      <file leaf-file-name="BlockList.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HTMLs/BlockList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="56" column="78" selection-start-line="56" selection-start-column="78" selection-end-line="56" selection-end-column="78" />
+            <state relative-caret-position="374">
+              <caret line="53" column="71" selection-start-line="53" selection-start-column="71" selection-end-line="53" selection-end-column="71" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Notification.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BlockList.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PHPs/BlockList.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Notification.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PHPs/Notification.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+            <state relative-caret-position="-220">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
-                <marker date="1467417313241" expanded="true" signature="375:439" ph="SELECT * FRO... myContact" />
-                <marker date="1467417313241" expanded="true" signature="1107:1171" ph="SELECT * FRO... myContact" />
+                <marker date="1467418543837" expanded="true" signature="375:439" ph="SELECT * FRO... myContact" />
               </folding>
             </state>
           </provider>
@@ -165,10 +169,12 @@
         <option value="$PROJECT_DIR$/HTMLs/LoginRegister.html" />
         <option value="$PROJECT_DIR$/HTMLs/background.html" />
         <option value="$PROJECT_DIR$/PHPs/AddToContact.php" />
-        <option value="$PROJECT_DIR$/HTMLs/Inbox.html" />
         <option value="$PROJECT_DIR$/HTMLs/Notification.html" />
-        <option value="$PROJECT_DIR$/Includes/functions.php" />
         <option value="$PROJECT_DIR$/PHPs/Notification.php" />
+        <option value="$PROJECT_DIR$/HTMLs/Inbox.html" />
+        <option value="$PROJECT_DIR$/Includes/functions.php" />
+        <option value="$PROJECT_DIR$/HTMLs/BlockList.html" />
+        <option value="$PROJECT_DIR$/PHPs/BlockList.php" />
       </list>
     </option>
   </component>
@@ -288,12 +294,12 @@
       <workItem from="1467104153517" duration="25827000" />
       <workItem from="1467186549918" duration="89507000" />
       <workItem from="1467337722715" duration="3997000" />
-      <workItem from="1467361652177" duration="45578000" />
+      <workItem from="1467361652177" duration="49790000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208915000" />
+    <option name="totallyTimeSpent" value="213127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -355,8 +361,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HTMLs/mail.php" />
-    <entry file="file://$PROJECT_DIR$/HTMLs/Inbox.php" />
     <entry file="file://$PROJECT_DIR$/Includes/db_connection_close.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -668,14 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTMLs/Inbox.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PHPs/Users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -686,34 +682,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTMLs/Users.html">
+    <entry file="file://$PROJECT_DIR$/HTMLs/Notification.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="6" column="72" selection-start-line="3" selection-start-column="2" selection-end-line="6" selection-end-column="72" />
+        <state relative-caret-position="219">
+          <caret line="88" column="28" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTMLs/Notification.html">
+    <entry file="file://$PROJECT_DIR$/HTMLs/Users.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="56" column="78" selection-start-line="56" selection-start-column="78" selection-end-line="56" selection-end-column="78" />
+        <state relative-caret-position="220">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTMLs/Inbox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTMLs/BlockList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="53" column="71" selection-start-line="53" selection-start-column="71" selection-end-line="53" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHPs/Notification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-220">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1467418543837" expanded="true" signature="375:439" ph="SELECT * FRO... myContact" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Includes/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
-          <caret line="89" column="23" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
           <folding>
             <element signature="n#Insert_query_users#0;n#!!top" expanded="false" />
             <element signature="n#Delete_query_users#0;n#!!top" expanded="false" />
-            <element signature="n#Insert_query_email#0;n#!!top" expanded="false" />
             <element signature="n#Delete_query_email#0;n#!!top" expanded="false" />
             <element signature="n#Update_query_email#0;n#!!top" expanded="false" />
-            <element signature="n#Insert_query_myContact#0;n#!!top" expanded="false" />
+            <element signature="n#Select_query_email#0;n#!!top" expanded="false" />
+            <element signature="n#Delete_query_myContact#0;n#!!top" expanded="false" />
             <element signature="n#Select_query_myContact#0;n#!!top" expanded="false" />
+            <element signature="n#Insert_query_blockList#0;n#!!top" expanded="false" />
+            <element signature="n#Update_query_blockList#0;n#!!top" expanded="false" />
             <element signature="n#upload_image#0;n#!!top" expanded="false" />
             <element signature="n#perform_query#0;n#!!top" expanded="false" />
             <element signature="n#set_session_login#0;n#!!top" expanded="false" />
@@ -722,33 +746,36 @@
             <element signature="n#xml_builder_mails_profile#0;n#!!top" expanded="false" />
             <element signature="n#xml_builder_mails_send#0;n#!!top" expanded="false" />
             <element signature="n#xml_builder_data#0;n#!!top" expanded="false" />
-            <marker date="1467417313170" expanded="true" signature="281:298" ph="INSERT INTO users... " />
-            <marker date="1467417313170" expanded="true" signature="768:784" ph="UPDATE users... " />
-            <marker date="1467417313170" expanded="true" signature="995:1011" ph="UPDATE users... " />
-            <marker date="1467417313170" expanded="true" signature="1310:1329" ph="SELECT * FRO... users" />
-            <marker date="1467417313170" expanded="true" signature="1839:1851" ph="INSERT INTO users... " />
-            <marker date="1467417313170" expanded="true" signature="1839:1856" ph="INSERT INTO email... " />
-            <marker date="1467417313170" expanded="true" signature="2343:2362" ph="SELECT * FRO... Email" />
-            <marker date="1467417313170" expanded="true" signature="2861:2882" ph="INSERT INTO myContact... " />
-            <marker date="1467417313170" expanded="true" signature="3182:3203" ph="DELETE FROM " />
-            <marker date="1467417313170" expanded="true" signature="3193:3203" ph="UPDATE myCon... " />
-            <marker date="1467417313170" expanded="true" signature="3391:3411" ph="UPDATE myCon... " />
-            <marker date="1467417313170" expanded="true" signature="3631:3645" ph="SELECT * FRO... Email" />
-            <marker date="1467417313170" expanded="true" signature="3631:3648" ph="SELECT * FRO... myC" />
-            <marker date="1467417313170" expanded="true" signature="3631:3654" ph="SELECT * FRO... myContact" />
-            <marker date="1467417313170" expanded="true" signature="7346:7391" ph="SELECT user_... myContact" />
+            <marker date="1467421676158" expanded="true" signature="281:298" ph="INSERT INTO users... " />
+            <marker date="1467421676158" expanded="true" signature="768:784" ph="UPDATE users... " />
+            <marker date="1467421676158" expanded="true" signature="995:1011" ph="UPDATE users... " />
+            <marker date="1467421676158" expanded="true" signature="1310:1329" ph="SELECT * FRO... users" />
+            <marker date="1467421676158" expanded="true" signature="1839:1851" ph="INSERT INTO users... " />
+            <marker date="1467421676158" expanded="true" signature="1839:1856" ph="INSERT INTO email... " />
+            <marker date="1467421676158" expanded="true" signature="2343:2362" ph="SELECT * FRO... Email" />
+            <marker date="1467421676158" expanded="true" signature="2861:2882" ph="INSERT INTO myContact... " />
+            <marker date="1467421676158" expanded="true" signature="3182:3203" ph="DELETE FROM " />
+            <marker date="1467421676158" expanded="true" signature="3193:3203" ph="UPDATE myCon... " />
+            <marker date="1467421676158" expanded="true" signature="3391:3411" ph="UPDATE myCon... " />
+            <marker date="1467421676158" expanded="true" signature="3631:3645" ph="SELECT * FRO... Email" />
+            <marker date="1467421676158" expanded="true" signature="3631:3648" ph="SELECT * FRO... myC" />
+            <marker date="1467421676158" expanded="true" signature="3631:3654" ph="SELECT * FRO... myContact" />
+            <marker date="1467421676158" expanded="true" signature="4131:4153" ph="INSERT INTO block_list... " />
+            <marker date="1467421676158" expanded="true" signature="4431:4443" ph="DELETE FROM " />
+            <marker date="1467421676158" expanded="true" signature="4431:4453" ph="DELETE FROM " />
+            <marker date="1467421676158" expanded="true" signature="4634:4654" ph="UPDATE myCon... " />
+            <marker date="1467421676158" expanded="true" signature="4874:4888" ph="SELECT * FRO... myContact" />
+            <marker date="1467421676158" expanded="true" signature="4874:4898" ph="SELECT * FRO... block_list" />
+            <marker date="1467421676158" expanded="true" signature="8770:8815" ph="SELECT user_... myContact" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PHPs/Notification.php">
+    <entry file="file://$PROJECT_DIR$/PHPs/BlockList.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-          <folding>
-            <marker date="1467417313241" expanded="true" signature="375:439" ph="SELECT * FRO... myContact" />
-            <marker date="1467417313241" expanded="true" signature="1107:1171" ph="SELECT * FRO... myContact" />
-          </folding>
+        <state relative-caret-position="271">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
