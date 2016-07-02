@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d9e3820-4875-4d81-9f5d-aef400bdfc06" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HTMLs/BlockList.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPs/BlockList.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTMLs/BlockList.html" afterPath="$PROJECT_DIR$/HTMLs/BlockList.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTMLs/ComposeEmail.html" afterPath="$PROJECT_DIR$/HTMLs/ComposeEmail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTMLs/Inbox.html" afterPath="$PROJECT_DIR$/HTMLs/Inbox.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTMLs/Notification.html" afterPath="$PROJECT_DIR$/HTMLs/Notification.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTMLs/ReadEmail.html" afterPath="$PROJECT_DIR$/HTMLs/ReadEmail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHPs/EmailComposer.php" afterPath="$PROJECT_DIR$/PHPs/EmailComposer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PHPs/Notification.php" afterPath="$PROJECT_DIR$/PHPs/Notification.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/XMLs/mails.xml" afterPath="$PROJECT_DIR$/XMLs/mails.xml" />
     </list>
     <ignored path="MailServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,8 +33,8 @@
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Includes/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+            <state relative-caret-position="381">
+              <caret line="216" column="34" selection-start-line="216" selection-start-column="34" selection-end-line="216" selection-end-column="34" />
               <folding>
                 <element signature="n#Insert_query_users#0;n#!!top" expanded="false" />
                 <element signature="n#Delete_query_users#0;n#!!top" expanded="false" />
@@ -49,63 +50,66 @@
                 <element signature="n#set_session_login#0;n#!!top" expanded="false" />
                 <element signature="n#set_cookie_remember_me#0;n#!!top" expanded="false" />
                 <element signature="n#unset_cookie_remember_me#0;n#!!top" expanded="false" />
-                <element signature="n#xml_builder_mails_profile#0;n#!!top" expanded="false" />
                 <element signature="n#xml_builder_mails_send#0;n#!!top" expanded="false" />
                 <element signature="n#xml_builder_data#0;n#!!top" expanded="false" />
-                <marker date="1467421676158" expanded="true" signature="281:298" ph="INSERT INTO users... " />
-                <marker date="1467421676158" expanded="true" signature="768:784" ph="UPDATE users... " />
-                <marker date="1467421676158" expanded="true" signature="995:1011" ph="UPDATE users... " />
-                <marker date="1467421676158" expanded="true" signature="1310:1329" ph="SELECT * FRO... users" />
-                <marker date="1467421676158" expanded="true" signature="1839:1851" ph="INSERT INTO users... " />
-                <marker date="1467421676158" expanded="true" signature="1839:1856" ph="INSERT INTO email... " />
-                <marker date="1467421676158" expanded="true" signature="2343:2362" ph="SELECT * FRO... Email" />
-                <marker date="1467421676158" expanded="true" signature="2861:2882" ph="INSERT INTO myContact... " />
-                <marker date="1467421676158" expanded="true" signature="3182:3203" ph="DELETE FROM " />
-                <marker date="1467421676158" expanded="true" signature="3193:3203" ph="UPDATE myCon... " />
-                <marker date="1467421676158" expanded="true" signature="3391:3411" ph="UPDATE myCon... " />
-                <marker date="1467421676158" expanded="true" signature="3631:3645" ph="SELECT * FRO... Email" />
-                <marker date="1467421676158" expanded="true" signature="3631:3648" ph="SELECT * FRO... myC" />
-                <marker date="1467421676158" expanded="true" signature="3631:3654" ph="SELECT * FRO... myContact" />
-                <marker date="1467421676158" expanded="true" signature="4131:4153" ph="INSERT INTO block_list... " />
-                <marker date="1467421676158" expanded="true" signature="4431:4443" ph="DELETE FROM " />
-                <marker date="1467421676158" expanded="true" signature="4431:4453" ph="DELETE FROM " />
-                <marker date="1467421676158" expanded="true" signature="4634:4654" ph="UPDATE myCon... " />
-                <marker date="1467421676158" expanded="true" signature="4874:4888" ph="SELECT * FRO... myContact" />
-                <marker date="1467421676158" expanded="true" signature="4874:4898" ph="SELECT * FRO... block_list" />
-                <marker date="1467421676158" expanded="true" signature="8770:8815" ph="SELECT user_... myContact" />
+                <marker date="1467424838280" expanded="true" signature="281:298" ph="INSERT INTO users... " />
+                <marker date="1467424838280" expanded="true" signature="768:784" ph="UPDATE users... " />
+                <marker date="1467424838280" expanded="true" signature="995:1011" ph="UPDATE users... " />
+                <marker date="1467424838280" expanded="true" signature="1310:1329" ph="SELECT * FRO... users" />
+                <marker date="1467424838280" expanded="true" signature="1839:1851" ph="INSERT INTO users... " />
+                <marker date="1467424838280" expanded="true" signature="1839:1856" ph="INSERT INTO email... " />
+                <marker date="1467424838280" expanded="true" signature="2343:2362" ph="SELECT * FRO... Email" />
+                <marker date="1467424838280" expanded="true" signature="2861:2882" ph="INSERT INTO myContact... " />
+                <marker date="1467424838280" expanded="true" signature="3183:3204" ph="DELETE FROM " />
+                <marker date="1467424838280" expanded="true" signature="3194:3204" ph="UPDATE myCon... " />
+                <marker date="1467424838280" expanded="true" signature="3393:3413" ph="UPDATE myCon... " />
+                <marker date="1467424838280" expanded="true" signature="3633:3647" ph="SELECT * FRO... Email" />
+                <marker date="1467424838280" expanded="true" signature="3633:3650" ph="SELECT * FRO... myC" />
+                <marker date="1467424838280" expanded="true" signature="3633:3656" ph="SELECT * FRO... myContact" />
+                <marker date="1467424838280" expanded="true" signature="4133:4155" ph="INSERT INTO block_list... " />
+                <marker date="1467424838280" expanded="true" signature="4434:4446" ph="DELETE FROM " />
+                <marker date="1467424838280" expanded="true" signature="4434:4456" ph="DELETE FROM " />
+                <marker date="1467424838280" expanded="true" signature="4638:4658" ph="UPDATE myCon... " />
+                <marker date="1467424838280" expanded="true" signature="4878:4892" ph="SELECT * FRO... myContact" />
+                <marker date="1467424838280" expanded="true" signature="4878:4902" ph="SELECT * FRO... block_list" />
+                <marker date="1467424838280" expanded="true" signature="8667:8712" ph="SELECT user_... myContact" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlockList.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HTMLs/BlockList.html">
+      <file leaf-file-name="EmailComposer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PHPs/EmailComposer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="53" column="71" selection-start-line="53" selection-start-column="71" selection-end-line="53" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlockList.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PHPs/BlockList.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Notification.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PHPs/Notification.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-220">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="264">
+              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
               <folding>
-                <marker date="1467418543837" expanded="true" signature="375:439" ph="SELECT * FRO... myContact" />
+                <marker date="1467428409822" expanded="true" signature="447:526" ph="SELECT * FRO... myContact" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Profile.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HTMLs/Profile.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="616">
+              <caret line="65" column="11" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
+              <folding>
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#form#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComposeEmail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HTMLs/ComposeEmail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="28" column="39" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -144,7 +148,6 @@
         <option value="$PROJECT_DIR$/PHPs/ajax.php" />
         <option value="$PROJECT_DIR$/HTMLs/ajax.html" />
         <option value="$PROJECT_DIR$/Stylesheets/LoginRegister.css" />
-        <option value="$PROJECT_DIR$/PHPs/EmailComposer.php" />
         <option value="$PROJECT_DIR$/includes/functions.php" />
         <option value="$PROJECT_DIR$/includes/db_connection.php" />
         <option value="$PROJECT_DIR$/PHPs/Logout.php" />
@@ -160,9 +163,7 @@
         <option value="$PROJECT_DIR$/Stylesheets/ComposeEmail.css" />
         <option value="$PROJECT_DIR$/PHPs/Inbox.php" />
         <option value="$PROJECT_DIR$/HTMLs/Profile.html" />
-        <option value="$PROJECT_DIR$/HTMLs/ReadEmail.html" />
         <option value="$PROJECT_DIR$/PHPs/Login.php" />
-        <option value="$PROJECT_DIR$/HTMLs/ComposeEmail.html" />
         <option value="$PROJECT_DIR$/PHPs/BackgroundImage.php" />
         <option value="$PROJECT_DIR$/PHPs/Users.php" />
         <option value="$PROJECT_DIR$/HTMLs/Users.html" />
@@ -170,11 +171,15 @@
         <option value="$PROJECT_DIR$/HTMLs/background.html" />
         <option value="$PROJECT_DIR$/PHPs/AddToContact.php" />
         <option value="$PROJECT_DIR$/HTMLs/Notification.html" />
-        <option value="$PROJECT_DIR$/PHPs/Notification.php" />
-        <option value="$PROJECT_DIR$/HTMLs/Inbox.html" />
-        <option value="$PROJECT_DIR$/Includes/functions.php" />
-        <option value="$PROJECT_DIR$/HTMLs/BlockList.html" />
         <option value="$PROJECT_DIR$/PHPs/BlockList.php" />
+        <option value="$PROJECT_DIR$/HTMLs/BlockList.html" />
+        <option value="$PROJECT_DIR$/PHPs/Notification.php" />
+        <option value="$PROJECT_DIR$/Includes/functions.php" />
+        <option value="$PROJECT_DIR$/HTMLs/Inbox.html" />
+        <option value="$PROJECT_DIR$/PHPs/MailReader.php" />
+        <option value="$PROJECT_DIR$/HTMLs/ReadEmail.html" />
+        <option value="$PROJECT_DIR$/HTMLs/ComposeEmail.html" />
+        <option value="$PROJECT_DIR$/PHPs/EmailComposer.php" />
       </list>
     </option>
   </component>
@@ -220,7 +225,52 @@
     </navigator>
     <panes>
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webmail" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webmail" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webmail" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webmail" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webmail" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PHPs" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webmail" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webmail" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HTMLs" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="Scope" />
       <pane id="Scratches" />
@@ -228,7 +278,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="terminal&#9;ACTION&#9;ActivateTerminalToolWindow&#10;termina&#9;ACTION&#9;ActivateTerminalToolWindow&#10;termin&#9;ACTION&#9;ActivateTerminalToolWindow&#10;terinal&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="termina&#9;ACTION&#9;ActivateTerminalToolWindow&#10;terminal&#9;ACTION&#9;ActivateTerminalToolWindow&#10;termin&#9;ACTION&#9;ActivateTerminalToolWindow&#10;terinal&#9;null&#9;null" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -294,18 +344,18 @@
       <workItem from="1467104153517" duration="25827000" />
       <workItem from="1467186549918" duration="89507000" />
       <workItem from="1467337722715" duration="3997000" />
-      <workItem from="1467361652177" duration="49790000" />
+      <workItem from="1467361652177" duration="56488000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213127000" />
+    <option name="totallyTimeSpent" value="219825000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22327965" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22327965" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -399,16 +449,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHPs/MailReader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <marker date="1467368315832" expanded="true" signature="231:250" ph="SELECT * FRO... email" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -586,34 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PHPs/EmailComposer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HTMLs/Profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1261">
-          <caret line="85" column="11" selection-start-line="67" selection-start-column="6" selection-end-line="85" selection-end-column="11" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#form#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HTMLs/ReadEmail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" column="67" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PHPs/BackgroundImage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -622,34 +634,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTMLs/ComposeEmail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="61" column="11" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHPs/Inbox.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="18" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HTMLs/background.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHPs/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="49" column="39" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -698,36 +686,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTMLs/Inbox.html">
+    <entry file="file://$PROJECT_DIR$/PHPs/BlockList.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+        <state relative-caret-position="65">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HTMLs/BlockList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="53" column="71" selection-start-line="53" selection-start-column="71" selection-end-line="53" selection-end-column="71" />
+        <state relative-caret-position="968">
+          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PHPs/Notification.php">
+    <entry file="file://$PROJECT_DIR$/HTMLs/ReadEmail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-220">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="704">
+          <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHPs/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHPs/MailReader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="80" selection-start-line="23" selection-start-column="80" selection-end-line="23" selection-end-column="80" />
           <folding>
-            <marker date="1467418543837" expanded="true" signature="375:439" ph="SELECT * FRO... myContact" />
+            <marker date="1467426514889" expanded="true" signature="269:288" ph="SELECT * FRO... email" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTMLs/Inbox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHPs/Inbox.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Includes/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+        <state relative-caret-position="381">
+          <caret line="216" column="34" selection-start-line="216" selection-start-column="34" selection-end-line="216" selection-end-column="34" />
           <folding>
             <element signature="n#Insert_query_users#0;n#!!top" expanded="false" />
             <element signature="n#Delete_query_users#0;n#!!top" expanded="false" />
@@ -743,39 +763,70 @@
             <element signature="n#set_session_login#0;n#!!top" expanded="false" />
             <element signature="n#set_cookie_remember_me#0;n#!!top" expanded="false" />
             <element signature="n#unset_cookie_remember_me#0;n#!!top" expanded="false" />
-            <element signature="n#xml_builder_mails_profile#0;n#!!top" expanded="false" />
             <element signature="n#xml_builder_mails_send#0;n#!!top" expanded="false" />
             <element signature="n#xml_builder_data#0;n#!!top" expanded="false" />
-            <marker date="1467421676158" expanded="true" signature="281:298" ph="INSERT INTO users... " />
-            <marker date="1467421676158" expanded="true" signature="768:784" ph="UPDATE users... " />
-            <marker date="1467421676158" expanded="true" signature="995:1011" ph="UPDATE users... " />
-            <marker date="1467421676158" expanded="true" signature="1310:1329" ph="SELECT * FRO... users" />
-            <marker date="1467421676158" expanded="true" signature="1839:1851" ph="INSERT INTO users... " />
-            <marker date="1467421676158" expanded="true" signature="1839:1856" ph="INSERT INTO email... " />
-            <marker date="1467421676158" expanded="true" signature="2343:2362" ph="SELECT * FRO... Email" />
-            <marker date="1467421676158" expanded="true" signature="2861:2882" ph="INSERT INTO myContact... " />
-            <marker date="1467421676158" expanded="true" signature="3182:3203" ph="DELETE FROM " />
-            <marker date="1467421676158" expanded="true" signature="3193:3203" ph="UPDATE myCon... " />
-            <marker date="1467421676158" expanded="true" signature="3391:3411" ph="UPDATE myCon... " />
-            <marker date="1467421676158" expanded="true" signature="3631:3645" ph="SELECT * FRO... Email" />
-            <marker date="1467421676158" expanded="true" signature="3631:3648" ph="SELECT * FRO... myC" />
-            <marker date="1467421676158" expanded="true" signature="3631:3654" ph="SELECT * FRO... myContact" />
-            <marker date="1467421676158" expanded="true" signature="4131:4153" ph="INSERT INTO block_list... " />
-            <marker date="1467421676158" expanded="true" signature="4431:4443" ph="DELETE FROM " />
-            <marker date="1467421676158" expanded="true" signature="4431:4453" ph="DELETE FROM " />
-            <marker date="1467421676158" expanded="true" signature="4634:4654" ph="UPDATE myCon... " />
-            <marker date="1467421676158" expanded="true" signature="4874:4888" ph="SELECT * FRO... myContact" />
-            <marker date="1467421676158" expanded="true" signature="4874:4898" ph="SELECT * FRO... block_list" />
-            <marker date="1467421676158" expanded="true" signature="8770:8815" ph="SELECT user_... myContact" />
+            <marker date="1467424838280" expanded="true" signature="281:298" ph="INSERT INTO users... " />
+            <marker date="1467424838280" expanded="true" signature="768:784" ph="UPDATE users... " />
+            <marker date="1467424838280" expanded="true" signature="995:1011" ph="UPDATE users... " />
+            <marker date="1467424838280" expanded="true" signature="1310:1329" ph="SELECT * FRO... users" />
+            <marker date="1467424838280" expanded="true" signature="1839:1851" ph="INSERT INTO users... " />
+            <marker date="1467424838280" expanded="true" signature="1839:1856" ph="INSERT INTO email... " />
+            <marker date="1467424838280" expanded="true" signature="2343:2362" ph="SELECT * FRO... Email" />
+            <marker date="1467424838280" expanded="true" signature="2861:2882" ph="INSERT INTO myContact... " />
+            <marker date="1467424838280" expanded="true" signature="3183:3204" ph="DELETE FROM " />
+            <marker date="1467424838280" expanded="true" signature="3194:3204" ph="UPDATE myCon... " />
+            <marker date="1467424838280" expanded="true" signature="3393:3413" ph="UPDATE myCon... " />
+            <marker date="1467424838280" expanded="true" signature="3633:3647" ph="SELECT * FRO... Email" />
+            <marker date="1467424838280" expanded="true" signature="3633:3650" ph="SELECT * FRO... myC" />
+            <marker date="1467424838280" expanded="true" signature="3633:3656" ph="SELECT * FRO... myContact" />
+            <marker date="1467424838280" expanded="true" signature="4133:4155" ph="INSERT INTO block_list... " />
+            <marker date="1467424838280" expanded="true" signature="4434:4446" ph="DELETE FROM " />
+            <marker date="1467424838280" expanded="true" signature="4434:4456" ph="DELETE FROM " />
+            <marker date="1467424838280" expanded="true" signature="4638:4658" ph="UPDATE myCon... " />
+            <marker date="1467424838280" expanded="true" signature="4878:4892" ph="SELECT * FRO... myContact" />
+            <marker date="1467424838280" expanded="true" signature="4878:4902" ph="SELECT * FRO... block_list" />
+            <marker date="1467424838280" expanded="true" signature="8667:8712" ph="SELECT user_... myContact" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PHPs/BlockList.php">
+    <entry file="file://$PROJECT_DIR$/HTMLs/ComposeEmail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+        <state relative-caret-position="352">
+          <caret line="28" column="39" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHPs/Notification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <marker date="1467423357757" expanded="true" signature="375:446" ph="SELECT * FRO... myContact" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PHPs/EmailComposer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding>
+            <marker date="1467428409822" expanded="true" signature="447:526" ph="SELECT * FRO... myContact" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTMLs/Profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="65" column="11" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#form#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

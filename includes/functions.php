@@ -87,18 +87,18 @@ function Insert_query_myContact($email, $username)
 
 }
 
-function Delete_query_myContact($username,$email)
+function Delete_query_myContact($username, $email)
 {
     $query_delete = "DELETE FROM myContact ";
     $query_delete .= "WHERE _user = '{$email}' and user_contact = '{$username}'";
     return $query_delete;
 }
 
-function Update_query_myContact($username,$email)
+function Update_query_myContact($username, $email)
 {
     $query_update = "UPDATE myContact SET ";
     $query_update .= "is_accepted = 1 ";
-    $query_update .= "WHERE _user = '{$email}' and user_contact = '{$username}' ";
+    $query_update .= "WHERE _user = '{$username}' and user_contact = '{$email}' ";
     return $query_update;
 }
 
@@ -124,14 +124,14 @@ function Insert_query_blockList($email, $username)
     return $query_insert;
 }
 
-function Delete_query_blockList($username,$email)
+function Delete_query_blockList($username, $email)
 {
     $query_delete = "DELETE FROM block_list ";
     $query_delete .= "WHERE _user = '{$email}' and block = '{$username}'";
     return $query_delete;
 }
 
-function Update_query_blockList($username,$email)
+function Update_query_blockList($username, $email)
 {
     $query_update = "UPDATE myContact SET ";
     $query_update .= "is_accepted = 1 ";
@@ -149,7 +149,6 @@ function Select_query_blockList($email)
 //*********************************************************************** END *************************************************************
 
 //**********************************************************CRUD OPERATION FOR blockListblockList *******************************************************************************
-
 
 
 function upload_image($email, $target)
@@ -214,10 +213,9 @@ function xml_builder_mails_profile($result, $email, $nom)
     while (($row = mysqli_fetch_assoc($result)) && ($numberOfMail)) {
         $xml_output .= '<mail>';
         $xml_output .= '<from>' . $row['sender'] . '</from>';
-        $xml_output .= '<to>' . $email . '</to>';
-        $xml_output .= '<date>' . $row['sending_time'] . '</date>';
-        $xml_output .= '<text>' . htmlspecialchars($row['content']) . '</text>';
-        $xml_output .= '<attachments>' . '<attach>' . $row['attachment'] . '</attach>' . '</attachments></mail>';
+        $xml_output .= '<subject>' . $row['subject'] . '</subject>';
+        $xml_output .= '<text>' . $row['content'] . '</text>';
+        $xml_output .= '<date>' . $row['sending_time'] . '</date></mail>';
         $numberOfMail--;
     }
     $xml_output .= '</mails>';
@@ -298,11 +296,11 @@ function xml_builder_Notification($result, $connection)
 {
     $xml_output = '<users>';
     while ($row = mysqli_fetch_assoc($result)) {
-        $current = $row['user_contact'];
-        
+        $current = $row['_user'];
+
         $user_query_select = Select_query_users($current);
         $res = perform_query($connection, $user_query_select);
-        
+
         while ($r = mysqli_fetch_assoc($res)) {
             $xml_output .= '<user>';
             $xml_output .= '<img>' . $r['Image_Link'] . '</img>';

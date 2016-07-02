@@ -15,7 +15,7 @@
         @import "../Stylesheets/css/widgEditor.css";
 
         /*#body{*/
-            /*background-image: url("sia.jpg");*/
+        /*background-image: url("sia.jpg");*/
         /*}*/
     </style>
 
@@ -51,8 +51,7 @@
             cache: false,
             async: false,
             success: function (msg) {
-//                alert(msg);
-                $('body').css({'background-image':'url('+'../PHPs/'+msg+')'});
+                $('body').css({'background-image': 'url(' + '../PHPs/' + msg + ')'});
             }, error: function (jqXHR, textStatus, errorThrown) {
                 // Handle errors here
                 console.log('ERRORS: ' + textStatus);
@@ -64,19 +63,25 @@
     });
 
 
-    $('#submit').on('click', sender);
-    function sender() {
-
-
+//    $('#submit').on('click', sender);
+//    function sender() {
 //
-//        var emailTo = $("#to_someone").val()
+//        var email=$('#to_someone').val();
 //        $.ajax({
-//            type: 'POST',
-//            url: "",
-//            data: shout_text,
-//            //success: success,
+//            type: "GET",
+//            url: "../PHPs/EmailComposer.php?check=true&email="+email,
 //            dataType: "text",
+//            data: {},
+//            cache: false,
+//            async: false,
+//            success: function (msg) {
 //
+//            }, error: function (jqXHR, textStatus, errorThrown) {
+//                // Handle errors here
+//                console.log('ERRORS: ' + textStatus);
+//                console.log(jqXHR.responseText);
+//                // STOP LOADING SPINNER
+//            }
 //        });
-    }
+//    }
 </script>

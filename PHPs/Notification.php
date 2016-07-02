@@ -14,7 +14,7 @@ if (isset($_COOKIE['id'])) {
 }
 //SHOW NOTIFICATIONS
 if (isset($_GET['Notification'])) {
-    $query_select = "SELECT * FROM myContact WHERE _user='{$email}' and is_accepted=0 ";
+    $query_select = "SELECT * FROM myContact WHERE user_contact='{$email}' and is_accepted=0 ";
     $result = mysqli_query($connection, $query_select);
     $xml_output = xml_builder_Notification($result, $connection);
 }

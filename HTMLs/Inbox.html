@@ -112,7 +112,8 @@
                     }
                 });
                 $(document).on('click', '.eachMail', function () {
-                    window.location = "../PHPs/mailReader.php?email=true & from=" + $(this).children(".from").text() + "& date=" + $(this).children(".date").text();
+
+                    window.location = "../PHPs/MailReader.php?email=true & from=" + $(this).children(".from").text() + "& date=" + $(this).children(".date").text();
                 });
             }, error: function (jqXHR, textStatus, errorThrown) {
 
